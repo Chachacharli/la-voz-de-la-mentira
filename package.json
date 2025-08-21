@@ -1,5 +1,6 @@
 {
-  "name": "nuxt-app",
+  "name": "la-voz-de-la-mentira",
+  "version": "0.1.0",
   "type": "module",
   "private": true,
   "scripts": {
@@ -10,7 +11,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.12",
     "nuxt": "^4.0.3",
+    "tailwindcss": "^4.1.12",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   }
