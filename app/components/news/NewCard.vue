@@ -1,5 +1,5 @@
 <template>
-    <article @click="goToNew(id)" class="grid grid-cols-12 cursor-pointer rounded-lg p-4 bg-white gap-x-3 hover:bg-gray-50">
+    <article @click="goToNew(documentId)" class="grid grid-cols-12 cursor-pointer rounded-lg p-4 bg-white gap-x-3 hover:bg-gray-50">
         <section class="col-span-12" name="author-info">
             <div class="flex justify-between">
                 <span class="text-sm text-gray-500">{{ autor }}</span>

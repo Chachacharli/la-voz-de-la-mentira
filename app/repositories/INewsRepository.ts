@@ -5,6 +5,7 @@ export interface NewItem {
   date: string
   description: string
   imagen?: string
+  documentId: string
 }
 
 export interface INewsRepository {

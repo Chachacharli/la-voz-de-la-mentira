@@ -8,19 +8,19 @@
         </section>
         <article class="cols-span-3">
             <header class="flex flex-col gap-3">
-                <h1 class="text-3xl font-bold text-black">{{ currencyNew.title }}</h1>
+                <h1 class="text-3xl font-bold text-black">{{ currentNew.title }}</h1>
                 <section class="text-gray-500 flex gap-5" name="metadata-new">
-                    <span class="text-gray-800">{{ currencyNew.autor }}</span>
-                    <span>{{ currencyNew.date }}</span>
+                    <span class="text-gray-800">{{ currentNew.autor }}</span>
+                    <span>{{ currentNew.date }}</span>
                 </section>
             </header>
             <hr class="border border-gray-100 my-5">
-            <div v-if="currencyNew.imagen" name="main-image-article">
-                <img class="w-full" :src="currencyNew.imagen" alt="">
+            <div v-if="currentNew.imagen" name="main-image-article">
+                <img class="w-full" :src="currentNew.imagen" alt="">
             </div>
             <div name="main-content-article" class="my-5">
                 <p class="text-black">
-                    {{ currencyNew.description }}
+                    {{ currentNew.description }}
                 </p>
             </div>
             <footer>
@@ -32,13 +32,36 @@
 
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { MOCK_NEWS } from '~/mock/news-mock'
 import type { NewItem } from '~/repositories/INewsRepository'
+import { getNew } from '~/services/newsService'
+
 
 const route = useRoute()
 const newsId = route.params.id
 
-const currencyNew: NewItem = MOCK_NEWS.find(item => item.id == newsId) as NewItem
+const currentNew = ref<NewItem>({
+    id: '',
+    title: '',
+    autor: '',
+    date: '',
+    description: '',
+    imagen: '',
+    documentId: ''  
+})
+
+onMounted(() => {
+    debugger
+    if (newsId) {
+        getNew(newsId as string)
+            .then(data => {
+                currentNew.value = data;
+            })
+            .catch(error => {
+                console.error("Error fetching news:", error);
+            });
+    }
+})
 
 </script>
