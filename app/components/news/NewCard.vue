@@ -1,8 +1,9 @@
 <template>
-    <article @click="goToNew(documentId)" class="grid grid-cols-12 cursor-pointer rounded-lg p-4 bg-white gap-x-3 hover:bg-gray-50">
+    <article @click="goToNew(documentId)"
+        class="grid grid-cols-12 cursor-pointer rounded-lg p-4 bg-white gap-x-3 hover:bg-gray-50">
         <section class="col-span-12" name="author-info">
             <div class="flex justify-between">
-                <span class="text-sm text-gray-500">{{ autor }}</span>
+                <!-- <span class="text-sm text-gray-500">{{ autor }}</span> -->
             </div>
         </section>
         <header class="col-span-8">
@@ -14,11 +15,12 @@
             </p>
         </header>
         <div role="banner" class="col-span-4">
-            <img v-if="imagen" :src="imagen" class="mb-3 rounded w-full h-48 object-cover" />
+            <img v-if="cover?.url" loading="lazy" :src="addBasePath(cover.url)"
+                class="mb-3 rounded w-full h-48 object-cover" />
         </div>
         <footer class="col-span-12">
             <div class="flex justify-between">
-                <span class="text-sm text-gray-500">{{ formatDate(date) }}</span>
+                <span class="text-sm text-gray-500">{{ formatDate(publishedAt) }}</span>
             </div>
         </footer>
     </article>
@@ -28,14 +30,15 @@
 import { useRouter } from 'vue-router';
 
 import { formatDate } from '~/utils/formatDate';
+import { addBasePath } from '#imports';
 
-import type { NewItem } from '~/repositories/INewsRepository';
+import type { DataArticle } from '~/repositories/INewsRepository';
 
-const props = defineProps<NewItem>()
+const props = defineProps<DataArticle>()
 const router = useRouter()
 
-const goToNew = (id: string) => {
-    router.push(`/news/${id}`)
+const goToNew = (documentId: string) => {
+    router.push(`/news/${documentId}`)
 }
 
 </script>

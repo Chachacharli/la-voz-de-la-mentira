@@ -13,7 +13,7 @@ export const getNews = async () => {
 export const getNew = async (id: string) => {
     try {
         const response = await axiosInstance.get(`/articles/${id}?populate=cover`);
-        return response.data;
+        return response.data.data;
     } catch (error) {
         console.error("Error fetching news:", error);
         throw error;

@@ -1,9 +1,10 @@
 import axios from "axios";
+import VARIABLES from "~/utils/envVariables";
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_STRAPI_URL_BASE,
+  baseURL: `${VARIABLES.STRAPI_URL_BASE}/api`,
   headers: {
-    Authorization: `Bearer ${import.meta.env.VITE_STRAPI_TOKEN}`,
+    Authorization: `Bearer ${VARIABLES.STRAPI_TOKEN}`,
   },
 });
 

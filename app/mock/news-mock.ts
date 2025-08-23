@@ -86,48 +86,48 @@ export const MOCK_NEWS: NewItem[] = [
 
 export const HOT_NOW: NewItem[] = [
   {
-    id: "hot-1",
+    id: 1,
     title: "Descubren que los gatos controlan el clima con sus maullidos",
     autor: "Redacción La Voz de la Mentira",
     date: "2025-08-20",
-    description:
-      "Un estudio de la Universidad Imaginaria de Atlantis reveló que los gatos, al maullar en conjunto, pueden alterar el clima local en un radio de hasta 5 kilómetros.",
+    description: "Un estudio de la Universidad Imaginaria de Atlantis reveló que los gatos, al maullar en conjunto, pueden alterar el clima local en un radio de hasta 5 kilómetros.",
     imagen: "https://placekitten.com/800/400",
+    documentId: ""
   },
   {
-    id: "hot-2",
+    id: 2,
     title: "Netflix anuncia serie exclusiva protagonizada por extraterrestres reales",
     autor: "Ana López",
     date: "2025-08-19",
-    description:
-      "La plataforma confirmó que seres de otro planeta audicionaron y lograron firmar contrato. La primera temporada estará subtitulada en idioma interestelar.",
+    description: "La plataforma confirmó que seres de otro planeta audicionaron y lograron firmar contrato. La primera temporada estará subtitulada en idioma interestelar.",
     imagen: "https://picsum.photos/800/400?random=2",
+    documentId: ""
   },
   {
-    id: "hot-3",
+    id: 3,
     title: "Se aprueba ley que obliga a las plantas a pagar impuestos por oxígeno",
     autor: "Carlos Ramírez",
     date: "2025-08-18",
-    description:
-      "El nuevo marco legal estipula que los árboles deberán aportar a la economía nacional con base en la cantidad de oxígeno producido diariamente.",
+    description: "El nuevo marco legal estipula que los árboles deberán aportar a la economía nacional con base en la cantidad de oxígeno producido diariamente.",
     imagen: "https://picsum.photos/800/400?random=3",
+    documentId: ""
   },
   {
-    id: "hot-4",
+    id: 4,
     title: "Los caracoles ya pueden solicitar pasaporte biométrico",
     autor: "María González",
     date: "2025-08-17",
-    description:
-      "El Ministerio de Movilidad Lenta presentó el nuevo documento que permitirá a los caracoles viajar libremente entre jardines internacionales.",
+    description: "El Ministerio de Movilidad Lenta presentó el nuevo documento que permitirá a los caracoles viajar libremente entre jardines internacionales.",
     imagen: "https://picsum.photos/800/400?random=4",
+    documentId: ""
   },
   {
-    id: "hot-5",
+    id: 5,
     title: "Nueva app traduce ladridos de perros en tiempo real",
     autor: "Redacción Innovación",
     date: "2025-08-16",
-    description:
-      "La aplicación BarkTranslate ya está disponible y promete acabar con los malentendidos entre humanos y sus mascotas.",
+    description: "La aplicación BarkTranslate ya está disponible y promete acabar con los malentendidos entre humanos y sus mascotas.",
     imagen: "https://picsum.photos/800/400?random=5",
+    documentId: ""
   },
 ]
